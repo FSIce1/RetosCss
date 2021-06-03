@@ -6,9 +6,225 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 
+    <style>
+        :root {
+            --neck: #ED927D;
+            --skin: #f6c09c;
+            --background: #ed4042; 
+            --red: #ed2860;
+            --dark-red: #680524;
+            --black: #00243a;
+            --white: #fff;
+        }
+
+        body {
+            margin: 0;
+            background: var(--background);
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            height: 100vh;
+        }
+
+        .cabeza {
+            position: relative;
+
+            width: 168px;
+            height: 320px;
+            border-radius: 100px;
+
+            background: var(--skin);
+        }
+
+
+        .oreja-izquierda, .oreja-derecha {
+            width: 33px;
+            height: 33px;
+            background: var(--skin);
+            border-radius: 50%;
+            position: absolute;
+            top: 100px;
+            z-index: 2;
+        }
+
+        .oreja-izquierda {
+            left: -20px;
+        }
+
+        .oreja-derecha {
+            right: -20px;
+        }
+
+        .frente {
+            position: relative;
+        
+            height: 87px;
+            clip-path: circle(50% at 50% 100%);
+            background: var(--skin);
+            z-index: 15;
+        }
+
+        .nariz {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--skin);
+            left: 60px;
+            top: 115px;
+            z-index: 5;
+        }
+
+        .ojo-derecho, .ojo-izquierdo {
+            position: absolute;
+
+            width: 43px;
+            height: 43px;
+            
+
+            border-radius: 50%;
+
+            transform: rotate(180deg);
+            background: var(--white);
+        }
+
+        .ojo-derecho {
+            right: 43px;
+            top: 75px;
+            transform: rotate(180deg);
+        }
+
+        .ojo-izquierdo{
+            left: 43px;
+            top: 75px;
+        }
+
+        .pupila {
+            position: absolute;
+            width: 7px;
+            height: 7px;
+
+            border-radius: 50%;
+
+            top: 18px;
+            left: 18px;
+
+            background-color: var(--black);
+        }
+
+        .barba {
+            position: absolute;
+
+            width: 168px;
+            height: 200px;
+                        
+            top: 40%;
+            border-radius: 40%;
+
+            border-top-left-radius: 35%;
+            border-top-right-radius: 35%;
+            
+            background: var(--black);
+        }
+
+        .boca {
+            position: absolute;
+                    
+            width: 72px;
+            height: 70px;       
+
+            top: 176px;
+            left: 49px;
+            clip-path: circle(50% at 50% 100%);
+            transform: rotate(180deg);
+            background: var(--dark-red);
+        }
+
+        .lengua {
+            width: 40px;
+            height: 15px;
+            top: 20px;
+            background: var(--red);
+            position: relative;
+            border-radius: 5px;
+        }
+
+        .dientes {
+            width: 55px;
+            height: 14px;
+            top: -2px;
+            left:-1px;
+            z-index: 100;
+            background: var(--white);
+            position: absolute;
+            border-radius: 5px;
+        }
+
+        .borde-o {
+            overflow: hidden;
+        }
+
+        .cuello {
+            
+            position: absolute;
+            width: 116px;
+            height: 95px;
+            background: var(--skin);
+            top: 250px;
+            left: 27px;
+
+            z-index: -1;
+        }
+
+        
+        .op5 {
+            opacity: 0.5;
+        }
+
+    </style>
+
 </head>
 <body>
     
+    <div class="container">
+
+
+        <div class="cabeza">
+
+            
+            <div class="oreja-derecha op5"></div>
+            <div class="oreja-izquierda op5"></div>
+            
+            <div class="frente"></div>
+            <div class="nariz"></div>
+
+            <div class="ojo-derecho">
+                <div class="pupila"></div>
+            </div>
+
+            <div class="ojo-izquierdo">
+                <div class="pupila"></div>
+            </div>
+
+            <div class="barba">
+
+            </div>
+
+            <div class="boca borde-o">
+                <div class="lengua"></div>
+                <div class="dientes"></div>
+                <div class="lengua"></div>
+            </div>
+    
+            <div class="cuello op5"></div>
+
+        </div>
+
+    </div>
     
 
 </body>
